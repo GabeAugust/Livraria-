@@ -4,18 +4,25 @@ import java.time.LocalDate;
 
 public class LivroModel {
 
-    private Long id;
+    private int id;
     private String titulo;
     private AutorModel autorModel;
     private boolean disponivel;
     private LocalDate dataDePublicacao;
 
+    public LivroModel(int id, String titulo, AutorModel autorModel, boolean disponivel, LocalDate dataDePublicacao) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autorModel = autorModel;
+        this.disponivel = disponivel;
+        this.dataDePublicacao = dataDePublicacao;
+    }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -49,5 +56,24 @@ public class LivroModel {
 
     public void setDataDePublicacao(LocalDate dataDePublicacao) {
         this.dataDePublicacao = dataDePublicacao;
+    }
+
+    @Override
+    public String toString() {
+        return """
+
+           ─────────────────────
+           ID: %d
+           Título: %s
+           Autor: %s
+           Disponível: %s
+           Data de Publicação: %s
+           """.formatted(
+                id,
+                titulo,
+                autorModel.getNome(),
+                disponivel ? "Sim" : "Não",
+                dataDePublicacao
+        );
     }
 }

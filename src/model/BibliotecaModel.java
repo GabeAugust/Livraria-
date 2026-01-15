@@ -11,16 +11,16 @@ public class BibliotecaModel {
         return livros;
     }
 
-    public void setLivros(ArrayList<LivroModel> livros) {
-        this.livros = livros;
+    public void setLivros(LivroModel livros) {
+        this.livros.add(livros);
     }
 
     public ArrayList<AutorModel> getAutores() {
         return autores;
     }
 
-    public void setAutores(ArrayList<AutorModel> autores) {
-        this.autores = autores;
+    public void setAutores(AutorModel autores) {
+        this.autores.add(autores);
     }
 
     public ArrayList<Object> getEmprestimos() {

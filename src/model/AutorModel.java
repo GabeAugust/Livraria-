@@ -1,15 +1,23 @@
 package model;
 
+import java.util.ArrayList;
+
 public class AutorModel {
-    private Long id;
+
+    private int id;
     private String nome;
+    private ArrayList<LivroModel> livros = new ArrayList<LivroModel>();
 
+    public AutorModel(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -19,5 +27,10 @@ public class AutorModel {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public String toString(){
+        return "Autor " + nome + " criado com sucesso";
     }
 }
